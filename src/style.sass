@@ -1,0 +1,670 @@
+
+html, body, a
+  font-size: 16px
+  color: #333333
+  font-family: Arial, serif
+
+.header, .footer
+  margin: 28px 42px
+
+.hamburger-wrapper
+  display: none
+
+.line
+  height: 1px
+  width: 100%
+  background-color: #f0f0f0
+
+.header
+  .logo
+    display: inline-block
+    position: relative
+    top: 8px
+    >img
+      width: 108px
+      height: 27px
+
+.header
+  .menu
+    margin: 0
+    display: inline-block
+    .menu_item
+      display: inline-block
+      opacity: .6
+      &:hover, &.active
+        opacity: 1
+      a
+        padding: 0 12px
+        font-weight: bold
+        font-size: 16px
+        text-decoration: none
+        transition: .5s ease
+
+
+
+.main
+  margin: 0 13% 70px
+  .heading
+    font-weight: bold
+    font-size: 2.25rem
+
+.main
+  .card_wrapper
+    display: grid
+    grid-template-columns: repeat(6,1fr)
+    grid-auto-rows: minmax(10px, max-content)
+    grid-gap: 20px
+    .s
+      grid-column: span 2
+      grid-row: span 1
+    .m
+      grid-column: span 3
+      grid-row: span 2
+    .l
+      grid-column: span 4
+      grid-row: span 3
+
+
+.main
+  .card
+    transition: .5s ease
+    background-color: #fafafa
+    &:hover
+      background-color: #f3f3f3
+
+
+.card
+  position: relative
+  border-radius: 20px
+  .card_data, .card_top-info
+    padding: 10px 20px 20px 20px
+  &:hover
+    .card_close_img
+      display: block
+  .card_close_img
+    z-index: 5
+    display: none
+    position: absolute
+    right: 0
+    top: 0
+    >img
+      position: absolute
+      width: 20px
+      height: 20px
+      right: 15px
+      top: 15px
+  .card_logo
+    min-width: 30px
+    width: 3.8vw
+    min-height: 30px
+    height: 3.8vw
+    vertical-align: middle
+  .card_title
+    position: relative
+    font-size: 24px
+    margin: 0 15px 0 18px
+    height: 3.8vw
+    >span
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%)
+  .card_time,.card_source
+    font-size: 18px
+    padding: 8px 0
+    margin: 0
+  .card_desription
+    font-size: 23px
+    padding: 12px 0
+    margin: 0
+  .card_img
+    margin-top: 15px
+    width: 100%
+    border-radius: 10px
+
+.card.l
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: minmax(min-content, max-content) minmax(min-content, 1fr)
+  grid-template-areas: "info" "data"
+  .card_top-info
+    grid-area: info
+  .card_data
+    align-self: end
+    grid-area: data
+  .card_top-info
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-areas: "l t t t t t t t t t t t"  "s s s s s s s s time time time time"
+    grid-template-rows: repeat(2, minmax(min-content, max-content))
+    grid-auto-rows: 1fr
+    .card_logo
+      grid-area: l
+    .card_title
+      grid-area: t
+    .card_source
+      grid-area: s
+    .card_time
+      grid-area: time
+      justify-self: end
+
+.card.s
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: minmax(min-content, max-content) minmax(min-content, 1fr)
+  grid-template-areas: "info" "data"
+  .card_top-info
+    grid-area: info
+  .card_data
+    align-self: end
+    grid-area: data
+  .card_top-info
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: minmax(0px,1fr)
+    grid-template-areas: "l t t t t t" "s s s s s s" " time time time time time time" "d d d d d d"
+    .card_logo
+      grid-area: l
+    .card_title
+      grid-area: t
+    .card_source
+      grid-area: s
+    .card_time
+      grid-area: time
+    .card_data
+      align-self: end
+      grid-area: d
+
+.card
+  position: relative
+  &:hover
+    .card_open_img
+      display: block
+  .card_open_img
+    display: none
+    position: absolute
+    right: 0
+    bottom: 0
+    >img
+      position: absolute
+      width: 20px
+      height: 20px
+      right: 15px
+      bottom: 15px
+
+.card.m
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: minmax(min-content, max-content) minmax(min-content, 1fr)
+  grid-template-areas: "info" "data"
+  .card_top-info
+    grid-area: info
+  .card_data
+    align-self: end
+    grid-area: data
+  .card_top-info
+    display: grid
+    grid-template-columns: repeat(10, 1fr)
+    grid-template-rows: repeat(2, minmax(min-content, max-content))
+    grid-template-areas: "l t t t t t t t t t" "s s s s s s time time time time"
+    .card_logo
+      grid-area: l
+    .card_title
+      grid-area: t
+    .card_source
+      grid-area: s
+    .card_time
+      justify-self: end
+      grid-area: time
+    .card_data
+      align-self: end
+      grid-area: d
+    
+.card.m
+  padding: 0
+  .bold
+    font-weight: bold
+  .card_desription
+    font-size: 20px
+  .card_data
+    .card_data_temp, .card_data_wetness
+      margin-top: 20px
+      font-size: 18px
+      width: 49%
+      display: inline-block
+
+.card.critical
+  .card_top-info:after, .card_data
+    transition: .5s ease
+  &:hover
+    .card_top-info:after, .card_data
+      background-color: #f3f3f3
+  .card_data
+    border-radius: 20px
+    background-color: #fafafa
+  .card_top-info
+    color: #ffffff
+    position: relative
+    background-color: #db5341
+    border-radius: 20px 20px 0 0
+    &:after
+      content: ''
+      width: 100%
+      height: 20px
+      position: absolute
+      bottom: 0
+      border-radius: 20px 20px 0 0
+      background-color: #fafafa
+
+
+.card_data_button-block
+  margin-top: 30px
+  .card_data_button
+    margin-right: 18px
+    background-color: #e5e5e5
+    width: 132px
+    height: 54px
+    border-radius: 8px
+    border: 0px
+    padding: 0
+    font-size: 20px
+    color: #000000
+    font-weight: bold
+    transition: .5s ease
+    &:hover
+      background-color: #ffd93e
+    &:focus
+      outline: none
+
+.card_data_music
+  display: grid
+  grid-template-columns: repeat(9, 1fr)
+  grid-template-rows: 30px 30px 52px
+  grid-template-areas: "i  n n n n n n n n" "i t t t t t t t time" "c c c v v v v v volperc"
+  .card_data_albumcover
+    grid-area: i
+    max-width: 52px
+    height: 52px
+    float: left
+    border-radius: 8px
+    margin-right: 10px
+  .card_data_artist
+    grid-area: n
+    font-size: 20px
+  .card_data_track_input
+    grid-area: t
+  .card_data_track_time
+    grid-area: time
+    font-size: 14px
+    font-family: Helvetica, serif
+    color: #000000
+    opacity: .3
+    align-self: center
+    text-align: right
+  .card_data_controls
+    grid-area: c
+    .next,.prev
+      cursor: pointer
+    >.next
+      margin-left: 20px
+      img
+        transform: rotate(180deg)
+  .card_data_volume
+    grid-area: v
+    align-self: center
+  .card_data_volume-perc
+    grid-area: volperc
+    align-self: center
+    font-size: 14px
+    font-family: Helvetica, serif
+    color: #000000
+    opacity: .3
+    text-align: right
+
+
+// input range
+
+#events_block
+  input[type=range]
+    -webkit-appearance: none /* Hides the slider so that custom slider can be made */
+    width: 100% /* Specific width is required for Firefox. */
+    background: transparent /* Otherwise white in Chrome */
+
+  input[type=range]::-webkit-slider-thumb
+    -webkit-appearance: none
+
+  input[type=range]:focus
+    outline: none /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+
+
+////////styling time bar
+//styling numb
+/* Special styling for WebKit/Blink */
+.card_data_track_input::-webkit-slider-thumb
+  -webkit-appearance: none
+  height: 20px
+  width: 12px
+  border-radius: 8.5px
+  border: none
+  background: #D8D8D8
+  cursor: pointer
+  margin-top: -9px /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+
+/* All the same stuff for Firefox */
+.card_data_track_input::-moz-range-thumb
+  height: 20px
+  width: 12px
+  border: none
+  border-radius: 8.5px
+  background: #D8D8D8
+  cursor: pointer
+
+
+//styling track
+
+.card_data_track_input::-webkit-slider-runnable-track
+  width: 100%
+  height: 1px
+  cursor: pointer
+  background: #979797
+  border: none
+
+
+.card_data_track_input::-moz-range-track
+  width: 100%
+  height: 1px
+  cursor: pointer
+  background: #979797
+  border: none
+
+
+////////styling volume bar
+//styling numb
+
+.card_data_volume::-webkit-slider-thumb
+  -webkit-appearance: none
+  height: 16px
+  width: 16px
+  border-radius: 50%
+  border: none
+  background: #605757
+  cursor: pointer
+  margin-top: -8px /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+
+/* All the same stuff for Firefox */
+.card_data_volume::-moz-range-thumb
+  width: 16px
+  height: 16px
+  border: none
+  border-radius: 50%
+  background: #605757
+  cursor: pointer
+
+
+//styling track
+
+.card_data_volume::-webkit-slider-runnable-track
+  width: 100%
+  height: 2px
+  cursor: pointer
+  background: rgba(216,216,216,0.30)
+  border: none
+
+
+.card_data_volume::-moz-range-track
+  width: 100%
+  height: 2px
+  cursor: pointer
+  background: rgba(216,216,216,0.30)
+  border: none
+
+
+.footer
+  margin-left: 40px
+  margin-right: 40px
+  font-size: 12px
+  font-family: Arial-MT-my, sans-serif
+  letter-spacing: .01px
+  color: #858585
+  .yandex_info
+    float: right
+
+.footer__content
+  display: inline-block
+  padding-left: 0
+  margin-top: 0
+  .footer__content_elem
+    display: inline-block
+    padding-right: 20px
+    a
+      text-decoration: none
+      color: #858585
+      transition: .5s ease
+      &:hover
+        color: #000000
+
+#video_block
+  display: grid
+  grid-auto-rows: 1fr
+  //grid-template-columns: minmax(300px , max-content) 1fr
+
+#video_wrapper
+  max-width: 700px
+  display: inline-block
+
+.video
+  width: 300px
+  height: 200px
+  transition: .5s
+
+.video_block_button
+  display: inline-block
+  padding: 10px
+  border-radius: 10px
+  font-size: 20px
+  font-weight: bold
+  background-color: #f3f3f3
+  cursor: pointer
+  transition: .5s ease
+  &:hover
+    background-color: #e3e3e3
+
+.video_controls_wrapper
+  margin-top: 20px
+  display: grid
+  grid-auto-rows: 1fr
+  grid-template-columns: repeat(2,minmax(150px,1fr))
+
+.video_controls
+  height: 100px
+  display: inline-block
+  .brightness_value, .contrast_value
+    width: 20px
+    display: inline-block
+
+
+
+@media (max-width: 1100px)
+  .card
+    .card_title
+      font-size: 20px
+    .card_time,.card_source
+      font-size: 15px
+    .card_desription
+      font-size: 20px
+
+  .card.m
+    .card_desription
+      font-size: 18px
+    .card_data
+      .card_data_temp, .card_data_wetness
+        display: block
+        width: 100%
+      .card_data_wetness
+        margin-top: 5px
+
+  .card_data_music
+    grid-template-rows: 30px 30px 30px 52px 52px
+    grid-template-areas: "i n n n n n n n n" "i _ _ _ _ _ _ _ _" "t t t t t t t t time" "c c c c c c c c c" "v v v v v v v v volperc"
+    .card_data_artist
+      font-size: 18px
+
+
+@media (max-width: 980px)
+  .main
+    .card_wrapper
+      grid-template-columns: 1fr
+      .s
+        grid-column: span 1
+      .m
+        grid-column: span 1
+      .l
+        grid-column: span 1
+
+  .card.s
+    .card_top-info
+      grid-template-columns: repeat(12, 1fr)
+      grid-template-areas: "l t t t t t t t t t t t" "s s s s s s time time time time time time" "d d d d d d d d d d d d"
+      .card_time
+        text-align: right
+
+  .card.m
+    .card_data
+      .card_data_temp, .card_data_wetness
+        display: inline-block
+        width: 50%
+      .card_data_wetness
+        margin-top: 5px
+
+  .card_data_music
+    grid-template-columns: repeat(9, 1fr)
+    grid-template-rows: 30px 30px 52px
+    grid-template-areas: "i  n n n n n n n n" "i t t t t t t t time" "c c c v v v v v volperc"
+
+  .main
+    .heading
+      font-size: 24px
+
+  .card
+    .card_title
+      font-size: 20px
+    .card_time,.card_source
+      font-size: 16px
+    .card_desription
+      font-size: 20px
+
+  .card.m
+    .card_desription
+      font-size: 20px
+    .card_data
+      .card_data_temp, .card_data_wetness
+        font-size: 20px
+
+  .card_data_music
+    .card_data_artist
+      font-size: 20px
+
+  .card_data_button-block
+    margin-top: 30px
+    .card_data_button
+      font-size: 20px
+      margin-right: 10px
+      width: 128px
+      height: 54px
+
+  .footer
+    text-align: center
+    .yandex_info
+      float: none
+      display: block
+  .footer__content
+    display: block
+    .footer__content_elem
+      padding: 0 10px
+
+.card_data
+  .zoom, .brightness
+    margin-top: 5px
+    display: none
+    font-size: 12px
+    color: #333333
+  .brightness
+    float: right
+
+@media (max-width: 720px)
+  .main
+    margin: 0 10px 70px
+  .card
+    .card_top-info
+      padding-top: 20px
+
+  .header
+    .hamburger-wrapper
+      display: block
+      position: absolute
+      right: 20px
+    .menu
+      position: absolute
+      z-index: 10
+      background-color: #fafafa
+      right: 35px
+      padding: 0
+      top: 80px
+      display: none
+      border-radius: 10px
+      .menu_item
+        display: block
+        border-radius: 10px
+        text-align: right
+        height: 30px
+        line-height: 30px
+        transition: .5s ease
+        &:hover
+          background-color: #f3f3f3
+
+@media (max-width: 480px)
+  .card
+    .card_title
+      font-size: 14px
+      font-family: Helvetica, serif
+      font-weight: bold
+    .card_source, .card_time
+      font-size: 12px
+    .card_desription
+      font-size: 18px
+      font-family: Helvetica, serif
+
+  .card.m
+    .card_desription
+      font-size: 18px
+      font-family: Helvetica, serif
+    .card_data
+      .card_data_temp, .card_data_wetness
+        font-size: 14px
+
+  .card_data_button-block
+    .card_data_button
+      width: 100px
+      height: 40px
+
+  .card_data_music
+    grid-template-areas: "i  n n n n n n n n" "i t t t t t t time time" "c c c v v v v volperc volperc"
+    .card_data_artist
+      height: 18px
+      overflow: hidden
+  .card_data_music
+    .card_data_controls
+      >.next
+        margin-left: 5px
+
+
+  .main
+    margin: 40px 0
+
+@media (max-width: 350px)
+  .card_data_music
+    grid-template-areas: "i  n n n n n n n n" "i t t t t t t time time" "c c c c v v v volperc volperc"
+
+@media (pointer: coarse)
+  .card_data
+    .zoom, .brightness
+      display: inline-block
