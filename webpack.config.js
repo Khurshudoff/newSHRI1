@@ -20,9 +20,6 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
-    externals: {
-        jquery: 'jQuery'
-    },
     module: {
         rules: [
         {
